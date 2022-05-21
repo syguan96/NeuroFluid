@@ -1,5 +1,5 @@
 """
-coarse and fine sample
+Renderer
 """
 
 import torch

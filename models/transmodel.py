@@ -1,7 +1,6 @@
 """
 A model to driven particles.
 
-Postional-based Dynamics framework for fluid simulation (refer to Position Based Fluids, ToG).
 I borrow code from `Lagrangian Fluid Simulation with Continuous Convolutions` to build the model to driven the particles.
 """
 
