@@ -1,0 +1,32 @@
+TRAIN:
+  pretrained: /data/syguan/fluid_simulation/release/ckpts/trans/dlf.pt
+  seed: 10
+  datapath: 
+    train: /data/syguan/fluid_simulation/release/data/particle_data/transition_v3
+    train_datatype: raw
+    eval: /data/syguan/fluid_simulation/release/data/benchmarks/bunny
+    eval_datatype: blender
+  start_index: 0
+  end_index: 50
+  lr: 1.0e-8
+  N_iters: 100000
+  save_interval: 500
+  log_interval: 10
+  grad_clip_value: 0
+  particle_radius: 0.025
+  gravity:
+    - 0.
+    - 0.
+    - -9.81
+
+TEST:
+  seed: 10
+  datapath: /data/syguan/fluid_simulation/release/data/benchmarks/bunny
+  datatype: blender
+  start_index: 0
+  end_index: 60
+  save_obj: True
+  gravity:
+    - 0.
+    - 0.
+    - -9.81

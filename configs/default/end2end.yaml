@@ -1,0 +1,53 @@
+TRAIN:
+  seed: 10
+  pretained_renderer: ''
+  pretrained_transition_model: ''
+  seperate_render_transition: True # seperate set learning scheduler for renderer and transition model
+  LR:
+    trans_lr: 1.0e-6
+    renderer_lr: 5.0e-4
+    use_scheduler: True
+    decay_eopchs: 10000
+  pretrained:
+    trans: ''
+    renderer: ''
+  N_precrop_iter: 500
+  half_res: False
+  epochs: 200
+  precrop_iters: 500
+  save_interval: 500
+  log_interval: 10
+  imgW: 400
+  imgH: 400
+  scale: 1.0
+  grad_clip_value: 0
+  loss_weight: 
+    boundary_loss: 1.0
+
+TEST:
+  imgW: 400
+  imgH: 400
+  scale: 1.0
+  start_index: 0
+  end_index: 50
+
+# configs of renderer
+RENDERER:
+  scale: 1
+  use_mask: True
+  ray:
+    ray_chunk: 1024
+    N_importance: 0  # num of fine sample point
+    N_samples: 64    # num of coarse sample point
+  NN_search:
+    fix_radius: True
+    particle_radius: 0.025
+    search_raduis_scale: 12.0
+    N_neighbor: 20
+  encoding:
+    density: True
+    var: True
+    smoothed_pos: True
+    smoothed_dir: True
+    exclude_ray: True
+    same_smooth_factor: False

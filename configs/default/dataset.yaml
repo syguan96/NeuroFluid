@@ -1,0 +1,75 @@
+bunny:
+  data_type: splishsplash
+  near: 9.0
+  far: 13.0
+  start_index: 0
+  end_index: 50
+  gravity:
+    - 0.
+    - 0.
+    - -9.81 
+  train:
+    path: /data/syguan/fluid_simulation/release/data/benchmarks/bunny
+    views:
+      warmup: [view_0, view_6, view_12, view_20]
+      dynamic: [view_20]
+  test: 
+    path: /data/syguan/fluid_simulation/release/data/benchmarks/bunny
+    views: [view_19,view_19.5,view_20.5,view_21]
+
+watercube:
+  data_type: blender
+  near: 9.0
+  far: 13.0
+  start_index: 0
+  end_index: 50
+  gravity:
+    - 0.
+    - 0.
+    - -9.81 
+  train:
+    path: /data/syguan/fluid_simulation/release/data/benchmarks/watercube/train
+    views:
+      warmup: [view_1,view_3,view_5,view_7]
+      dynamic: [view_1]
+  test:
+    path: /data/syguan/fluid_simulation/release/data/benchmarks/watercube/test
+    views: [view_6]
+
+watersphere:
+  data_type: blender
+  near: 9.0
+  far: 13.0
+  start_index: 0
+  end_index: 50
+  gravity:
+    - 0.
+    - 0.
+    - -9.81 
+  train:
+    path: /data/syguan/fluid_simulation/release/data/benchmarks/watersphere/train
+    views:
+      warmup: [view_1,view_3,view_5,view_7]
+      dynamic: [view_1]
+  test:
+    path: /data/syguan/fluid_simulation/release/data/benchmarks/watersphere/test
+    views: [view_6]
+
+honeycone:
+  data_type: blender
+  near: 9.0
+  far: 13.0
+  start_index: 15
+  end_index: 65
+  gravity:
+    - 0.
+    - 0.
+    - -9.81 
+  train:
+    path: /data/syguan/fluid_simulation/release/data/benchmarks/honeycone/train
+    views:
+      warmup: [view_1,view_3,view_5,view_7]
+      dynamic: [view_1]
+  test:
+    path: /data/syguan/fluid_simulation/release/data/benchmarks/honeycone/test
+    views: [view_6]
