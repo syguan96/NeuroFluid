@@ -1,5 +1,4 @@
 # NeuroFluid
----
 Code reposity for this paper:  
 **NeuroFluid: Fluid Dynamics Grounding with Particle-Driven Neural Radiance Fields.**  
 [Shanyan Guan](https://syguan96.github.io/), Huayu Deng, [Yunbo Wang](https://wyb15.github.io/)<sup>†</sup>, [Xiaokang Yang](https://scholar.google.com/citations?user=yDEavdMAAAAJ&hl=zh-CN)  
@@ -19,7 +18,6 @@ Please cite our paper (pdf) if you find this code useful:
 
 
 ## Dependencies
----
 NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run NeuroFluid, please install dependencies as follows:
 1. Create an environment
     ```bash 
@@ -49,13 +47,11 @@ NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run 
 
 
 ## Fetch data
----
 To be down.
 
 
 
 ## Running the pretrained model
----
 - Evaluate NeuroFluid:
 ```bash 
 python eval_e2e.py --resume_from $MODEL_PATH --dataset DATASET_NAME
@@ -76,7 +72,6 @@ DATASET_NAME is one element of [bunny, watercube, watersphere, honeycone].
 
 
 ## Run the training script
----
 To be down.
 
 
@@ -84,8 +79,7 @@ To be down.
 ## Evaluation on baselines
 To be down.
 
-Acknowledgement
----
+## Acknowledgement
 The implementation of transition model is borrowed from [
 DeepLagrangianFluids](https://github.com/isl-org/DeepLagrangianFluids). Please consider cite their paper if you use their code snippet:
 ```
