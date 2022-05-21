@@ -4,7 +4,7 @@ Code reposity for this paper:
 **NeuroFluid: Fluid Dynamics Grounding with Particle-Driven Neural Radiance Fields.**  
 [Shanyan Guan](https://syguan96.github.io/), Huayu Deng, [Yunbo Wang](https://wyb15.github.io/)<sup>†</sup>, [Xiaokang Yang](https://scholar.google.com/citations?user=yDEavdMAAAAJ&hl=zh-CN)  
 ICML 2022   
-[[Paper]](https://github.com/syguan96/NeuroFluid)/[[Project Page]](https://syguan96.github.io/NeuroFluid-webpage/)
+[[Paper]](https://github.com/syguan96/NeuroFluid)/[[Project Page]](https://syguan96.github.io/NeuroFluid/)
 
 Please cite our paper (pdf) if you find this code useful:
 ```
