@@ -84,7 +84,7 @@ class Trainer(BaseTrainer):
             self.update_step(loss)
                      
             # evaluation
-            if (step_idx+1) % 5000 == 0:
+            if (step_idx+1) % self.options.TRAIN.save_interval == 0:
                 self.eval(step_idx)
                 self.save_checkpoint(step_idx)
                     
@@ -131,7 +131,7 @@ class Trainer(BaseTrainer):
             total_loss = total_loss+rgbloss
                     
             # log
-            if (step_idx+1) % 10 == 0:
+            if (step_idx+1) % self.options.log_interval == 0:
                 self.summary_writer.add_scalar(f'{view_name}/rgbloss_0', rgbloss_0.item(), step_idx)
                 self.summary_writer.add_histogram(f'{view_name}/num_neighbors_0', render_ret['num_nn_0'], step_idx)
                 if N_importance>0:

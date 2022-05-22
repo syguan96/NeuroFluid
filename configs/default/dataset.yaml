@@ -18,7 +18,7 @@ bunny:
     views: [view_19,view_19.5,view_20.5,view_21]
 
 watercube:
-  data_type: blender
+  data_type: splishsplash
   near: 9.0
   far: 13.0
   start_index: 0
@@ -37,7 +37,7 @@ watercube:
     views: [view_6]
 
 watersphere:
-  data_type: blender
+  data_type: splishsplash
   near: 9.0
   far: 13.0
   start_index: 0
@@ -56,7 +56,7 @@ watersphere:
     views: [view_6]
 
 honeycone:
-  data_type: blender
+  data_type: splishsplash
   near: 9.0
   far: 13.0
   start_index: 15

@@ -42,7 +42,7 @@ RENDERER:
   NN_search:
     fix_radius: True
     particle_radius: 0.025
-    search_raduis_scale: 12.0
+    search_raduis_scale: 9.0
     N_neighbor: 20
   encoding:
     density: True

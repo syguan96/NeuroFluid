@@ -1,2 +1,4 @@
 exps
 *__pycache__
+configs/honeycone_warmup.yaml
+configs/watercube_warmup.yaml

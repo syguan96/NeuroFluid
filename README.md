@@ -16,6 +16,9 @@ Please cite our paper (pdf) if you find this code useful:
 ```
 
 
+<p float="center">
+  <img src="https://github.com/syguan96/ImageHost/blob/main/teaser.gif" width="99%" />
+</p>
 
 ## Dependencies
 NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run NeuroFluid, please install dependencies as follows:

@@ -11,9 +11,9 @@ TRAIN:
   imgW: 400
   imgH: 400
   scale: 1.0
-  save_interval: 500
+  save_interval: 5000
   log_interval: 10
-
+  
 TEST:
   camera_angle_x: 0.2988457977771759
   imgW: 400
@@ -24,7 +24,7 @@ TEST:
   end_index: 50
   near: 9.0
   far: 13.0
-  
+
 # configs of renderer
 RENDERER:
   scale: 1

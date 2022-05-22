@@ -60,7 +60,7 @@ def dataset_config() -> CN:
       CfgNode: dataset config as a yacs CfgNode object.
     """
     config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'default/dataset.yaml')
-    cfg = default_config()
+    cfg = _C.clone()
     cfg.merge_from_file(config_file)
     cfg.freeze()
     return cfg
@@ -73,7 +73,6 @@ def end2end_training_config() -> CN:
       CfgNode: end2end traning config as a yacs CfgNode object.
     """
     cfg_argparse = _parse_args(parser)
-    assert cfg_argparse['config'] == ''
     if cfg_argparse['config'] == '':
         config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'default/end2end.yaml')
     else:
@@ -97,7 +96,6 @@ def warmup_training_config() -> CN:
       CfgNode: warmup traning config as a yacs CfgNode object.
     """
     cfg_argparse = _parse_args(parser)
-    assert cfg_argparse['config'] == ''
     if cfg_argparse['config'] == '':
         config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'default/warmup.yaml')
     else:
@@ -122,7 +120,6 @@ def transmodel_config() -> CN:
       CfgNode: transmodel config as a yacs CfgNode object.
     """
     cfg_argparse = _parse_args(parser)
-    assert cfg_argparse['config'] == ''
     if cfg_argparse['config'] == '':
         config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'default/transmodel.yaml')
     else:
