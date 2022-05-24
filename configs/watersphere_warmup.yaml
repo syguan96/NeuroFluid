@@ -1,37 +1,33 @@
 TRAIN:
+  pretained_renderer: ''
   seed: 10
   partial_load: False
-  pretained_renderer: 'exps/watercube/warmup/models/99999.pt'
-  pretrained_transition_model: '/data/syguan/fluid_simulation/release/ckpts/trans/transv3_694999.pt' # '/data/syguan/fluid_simulation/release/ckpts/trans/dlf.pt'
-  seperate_render_transition: True # seperate set learning scheduler for renderer and transition model
-  LR:
-    trans_lr: 1.0e-5
-    renderer_lr: 3.0e-4
-    use_scheduler: True
-    decay_eopchs: 10000
-  N_precrop_iter: 500
-  half_res: False
-  epochs: 20000
+  N_iters: 100000
   precrop_iters: 500
-  save_interval: 500
+  LR:
+    lr: 5.0e-4
+    use_scheduler: True
+    decay_epochs: 10000
+  imgW: 400
+  imgH: 400
+  scale: 1.0
+  save_interval: 5000
   log_interval: 10
-  imgW: 400
-  imgH: 400
-  scale: 1.0
-  grad_clip_value: 0
-  loss_weight: 
-    boundary_loss: 1.0
-
+  
 TEST:
+  camera_angle_x: 0.32
   imgW: 400
   imgH: 400
   scale: 1.0
+  data_path: '/data/syguan/fluid_simulation/release/data/benchmarks/watersphere/test/view_0/test/particles'
   start_index: 0
   end_index: 50
+  near: 9.0
+  far: 13.0
 
 # configs of renderer
 RENDERER:
-  # scale: 1.0
+  scale: 1
   use_mask: True
   ray:
     ray_chunk: 1024

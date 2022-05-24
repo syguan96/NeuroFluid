@@ -168,7 +168,7 @@ class Trainer(BaseTrainer):
         self.transition_model.train()
         self.renderer.train()
 
-        for epoch_idx in tqdm(range(self.start_step, self.options.TRAIN.epochs), total=self.options.TRAIN.epochs, desc='Iteration:'):
+        for epoch_idx in tqdm(range(self.start_step, self.options.TRAIN.epochs), total=self.options.TRAIN.epochs, desc='Epoch:'):
             self.tmp_fluid_error = FluidErrors()
             for data_idx in range(self.dataset_length):
                 data = self.dataset[data_idx]
@@ -304,7 +304,7 @@ class Trainer(BaseTrainer):
         """
         visulize the point cloud resutls, and the image
         """
-        print('\nEval:', step_idx)
+        print('\nStep {} Eval:'.format(step_idx))
         self.eval_count += 1
         self.transition_model.eval()
         self.renderer.eval()

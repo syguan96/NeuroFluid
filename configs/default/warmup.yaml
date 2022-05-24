@@ -15,11 +15,11 @@ TRAIN:
   log_interval: 10
 
 TEST:
-  camera_angle_x: 0.2988457977771759
+  camera_angle_x: 0.323
   imgW: 400
   imgH: 400
   scale: 1.0
-  data_path: '/data/syguan/fluid_simulation/release/data/benchmarks/bunny/view_0/train/particles'
+  data_path: '/data/syguan/fluid_simulation/release/data/benchmarks/honeycone/test/view_0/train/particles'
   start_index: 0
   end_index: 50
   near: 9.0
@@ -27,7 +27,7 @@ TEST:
   
 # configs of renderer
 RENDERER:
-  scale: 1
+  # scale: 1
   use_mask: True
   ray:
     ray_chunk: 1024
