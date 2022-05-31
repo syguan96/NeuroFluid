@@ -17,3 +17,8 @@ tensorboard==2.8.0
 tqdm
 trimesh==3.10.8
 yacs
+partio
+zstandard
+msgpack
+msgpack-numpy
+plyfile

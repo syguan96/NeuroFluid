@@ -50,9 +50,10 @@ NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run 
 
 
 ## Fetch data
-To be down.
+Dataset and pretrained model will be released soon.
 
-
+## Generate data
+See [this guide](data_generation/README.md) to generate fluid data.
 
 ## Running the pretrained model
 - Evaluate NeuroFluid:
@@ -77,10 +78,6 @@ DATASET_NAME is one element of [bunny, watercube, watersphere, honeycone].
 ## Run the training script
 To be down.
 
-
-
-## Evaluation on baselines
-To be down.
 
 ## Acknowledgement
 The implementation of transition model is borrowed from [

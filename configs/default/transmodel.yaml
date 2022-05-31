@@ -21,7 +21,7 @@ TRAIN:
 
 TEST:
   seed: 10
-  datapath: /data/syguan/fluid_simulation/release/data/benchmarks/bunny
+  datapath: /data/syguan/fluid_simulation/release/data/benchmarks/watersphere/test
   datatype: blender
   start_index: 0
   end_index: 60
