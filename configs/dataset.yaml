@@ -1,0 +1,62 @@
+watercube:
+  data_type: splishsplash
+  near: 9.0
+  far: 13.0
+  gravity:
+    - 0.
+    - 0.
+    - -9.81 
+  train:
+    start_index: 0
+    end_index: 50
+    path: /data/syguan/fluid_simulation/release/data_release/watercube
+    views:
+      warmup: [view_1,view_2,view_3,view_4]
+      dynamic: [view_1]
+  test:
+    start_index: 0
+    end_index: 60
+    path: /data/syguan/fluid_simulation/release/data_release/watercube
+    views: [view_5]
+
+watersphere:
+  data_type: splishsplash
+  near: 9.0
+  far: 13.0
+  gravity:
+    - 0.
+    - 0.
+    - -9.81 
+  train:
+    start_index: 0
+    end_index: 50
+    path: /data/syguan/fluid_simulation/release/data_release/watersphere
+    views:
+      warmup: [view_1,view_2,view_3,view_4]
+      dynamic: [view_1]
+  test:
+    start_index: 0
+    end_index: 60
+    path: /data/syguan/fluid_simulation/release/data_release/watersphere
+    views: [view_5]
+
+honeycone:
+  data_type: splishsplash
+  near: 9.0
+  far: 13.0
+  gravity:
+    - 0.
+    - 0.
+    - -9.81 
+  train:
+    start_index: 15
+    end_index: 65
+    path: /data/syguan/fluid_simulation/release/data_release/honeycone
+    views:
+      warmup: [view_1,view_2,view_3,view_4]
+      dynamic: [view_1]
+  test:
+    start_index: 0
+    end_index: 60
+    path: /data/syguan/fluid_simulation/release/data_release/honeycone
+    views: [view_5]

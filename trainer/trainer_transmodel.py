@@ -29,7 +29,7 @@ class Trainer():
         # logger
         self.exppath = osp.join(options.expdir, options.expname)
         self.particlepath = osp.join(self.exppath, 'particles')
-        self.modelpath = osp.join(self.exppath, 'particles')
+        self.modelpath = osp.join(self.exppath, 'models')
         os.makedirs(osp.join(self.exppath, 'models'), exist_ok=True)
         os.makedirs(osp.join(self.exppath, 'particles'), exist_ok=True)
         self.summary_writer = SummaryWriter(log_dir=self.exppath)
@@ -212,13 +212,13 @@ class Trainer():
                     grad_norms = self.cal_grad_norm(self.transition_model)
                     self.summary_writer.add_histogram('grad_l2norm_after', grad_norms, global_step)
 
-                if (global_step+1) % self.options.TRAIN.save_interval == 0:
-                    trg_path = osp.join(self.modelpath, f'{global_step}.pt')
-                    torch.save({'step':epoch_idx,
+                global_step += 1
+            if (epoch_idx+1) % self.options.TRAIN.save_interval == 0:
+                trg_path = osp.join(self.modelpath, f'{global_step}.pt')
+                torch.save({'step':epoch_idx,
                                 'model_state_dict':self.transition_model.state_dict(),
                                 'optimizer_state_dict': self.optimizer.state_dict()}, trg_path)
-                    self.eval(global_step)
-                global_step += 1
+                self.eval(global_step)
                     
 
     def eval(self, step_idx):

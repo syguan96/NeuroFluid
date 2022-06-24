@@ -1,4 +1,8 @@
-exps
+exps*
+eval_res*
 *__pycache__
-configs/honeycone_warmup.yaml
-configs/watercube_warmup.yaml
+*.sh
+random*.ipynb
+*.pdf
+*_nerf.py
+_configs

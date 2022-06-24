@@ -8,8 +8,7 @@ TRAIN:
     trans_lr: 1.0e-5
     renderer_lr: 3.0e-4
     use_scheduler: True
-    decay_eopchs: 10000
-  N_precrop_iter: 500
+    # decay_eopchs: 10000
   half_res: False
   epochs: 20000
   precrop_iters: 500

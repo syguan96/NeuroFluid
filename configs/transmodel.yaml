@@ -2,15 +2,15 @@ TRAIN:
   pretrained: /data/syguan/fluid_simulation/release/ckpts/trans/dlf.pt
   seed: 10
   datapath: 
-    train: /data/syguan/fluid_simulation/release/data/particle_data/transition_v3
-    train_datatype: raw
-    eval: /data/syguan/fluid_simulation/release/data/benchmarks/bunny
+    train: /data/syguan/fluid_simulation/release/data_release/watercube
+    train_datatype: blender
+    eval: /data/syguan/fluid_simulation/release/data_release/watercube
     eval_datatype: blender
   start_index: 0
   end_index: 50
-  lr: 1.0e-8
-  N_iters: 100000
-  save_interval: 500
+  lr: 1.0e-6
+  N_iters: 100
+  save_interval: 10
   log_interval: 10
   grad_clip_value: 0
   particle_radius: 0.025
@@ -21,7 +21,7 @@ TRAIN:
 
 TEST:
   seed: 10
-  datapath: /data/syguan/fluid_simulation/release/data/benchmarks/watersphere/test
+  datapath: /data/syguan/fluid_simulation/release/data_release/watercube
   datatype: blender
   start_index: 0
   end_index: 60

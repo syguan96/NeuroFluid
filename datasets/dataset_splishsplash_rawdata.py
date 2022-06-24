@@ -32,6 +32,8 @@ class ParticleDataset(Dataset):
             self.dataitems = self.collect_particles_raw()
         elif data_type == 'blender':
             self.dataitems = self.collect_particles_blender()
+        elif data_type == 'blender_all':
+            self.dataitems = self.collect_particles_blender_all()
         print('Total lens:',len(self.dataitems) )
 
 
@@ -77,10 +79,29 @@ class ParticleDataset(Dataset):
             samples.append(sample)
         return samples
 
+    def collect_particles_blender_all(self):
+        particles_dirs = glob.glob(osp.join(self.root_dir, '*'))
+        samples = []
+        for particles_dir in particles_dirs:
+            particle_paths_i = glob.glob(osp.join(particles_dir, 'train/particles/*.npz'))
+            particle_paths_i.sort(key=lambda x:int(x.split('/')[-1][:-4]))
+            particle_paths_i = particle_paths_i[self.start:self.end]
+            box_path = osp.join(self.root_dir, 'box.pt')
+            box, box_normal = self._read_box(box_path)
+            for idx in range(len(particle_paths_i)-self.window+1):
+                sample = {
+                                'box': box,
+                                'box_normals': box_normal,
+                                }
+                for ii in range(self.window):
+                    _pos, _vel = self._read_particles(particle_paths_i[idx+ii])
+                    sample[f'particles_pos_{ii}'] = _pos
+                    sample[f'particles_vel_{ii}'] = _vel
+                samples.append(sample)
+        return samples
 
     def collect_particles_raw(self,):
         particles_dirs = glob.glob(osp.join(self.root_dir, 'sim*'))
-        self.total_num = 0
         samples = []
         for particles_dir in particles_dirs:
             particle_paths_i = glob.glob(osp.join(particles_dir, 'output/fluid_*.npz'))

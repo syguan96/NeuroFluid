@@ -19,12 +19,14 @@ import torchvision.transforms as T
 from utils.ray_utils import get_ray_directions, get_rays
 
 class BlenderDataset(Dataset):
-    def __init__(self, root_dir, cfg, imgW, imgH, imgscale, viewnames, split='train'):
+    def __init__(self, root_dir, cfg, imgW, imgH, start_index, end_index, imgscale, viewnames, split='train'):
         super(BlenderDataset, self).__init__()
         self.data_type = cfg.data_type
         # self.half_res = cfg.half_res
         self.viewnames = viewnames
         self.cfg = cfg
+        self.start_index = start_index
+        self.end_index = end_index
         self.split = split
         self.img_wh = (imgW, imgH)
         self.img_scale = imgscale
@@ -82,7 +84,7 @@ class BlenderDataset(Dataset):
         particle_poss = []
         particle_vels = []
         # self.all_mask = []
-        for frame in self.meta['frames'][self.cfg.start_index:self.cfg.end_index]:
+        for frame in self.meta['frames'][self.start_index:self.end_index]:
             # get particles
             # particles_path.append(frame['particle_path'])
             if len(self.particles_poss_mv) == 0:

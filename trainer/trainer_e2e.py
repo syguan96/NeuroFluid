@@ -42,10 +42,12 @@ class Trainer(BaseTrainer):
         self.train_view_names = self.options['train'].views.dynamic
         self.test_viewnames = self.options['test'].views
         self.dataset = BlenderDataset(self.options.train.path, self.options,
+                                            start_index=self.options['train'].start_index, end_index=self.options['train'].end_index,
                                             imgW=self.options.TRAIN.imgW, imgH=self.options.TRAIN.imgH,
                                             imgscale=self.options.TRAIN.scale, viewnames=self.train_view_names, split='train')
         self.dataset_length = len(self.dataset)
         self.test_dataset = BlenderDataset(self.options.test.path, self.options, 
+                                            start_index=self.options['test'].start_index, end_index=self.options['test'].end_index,
                                             imgW=self.options.TEST.imgW, imgH=self.options.TEST.imgH,
                                             imgscale=self.options.TEST.scale, viewnames=self.test_viewnames, split='test')
         self.test_dataset_length = len(self.test_dataset)

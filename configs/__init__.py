@@ -59,7 +59,7 @@ def dataset_config() -> CN:
     Returns:
       CfgNode: dataset config as a yacs CfgNode object.
     """
-    config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'default/dataset.yaml')
+    config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'dataset.yaml')
     cfg = _C.clone()
     cfg.merge_from_file(config_file)
     cfg.freeze()
@@ -74,7 +74,7 @@ def end2end_training_config() -> CN:
     """
     cfg_argparse = _parse_args(parser)
     if cfg_argparse['config'] == '':
-        config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'default/end2end.yaml')
+        config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'end2end.yaml')
     else:
         config_file = cfg_argparse['config']
     cfg = default_config()
@@ -88,6 +88,28 @@ def end2end_training_config() -> CN:
 
     return cfg
 
+def nerf_training_config() -> CN:
+    """
+    Get NeRF training config file
+    Returns:
+      CfgNode: NeRF traning config as a yacs CfgNode object.
+    """
+    cfg_argparse = _parse_args(parser)
+    if cfg_argparse['config'] == '':
+        config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'nerf.yaml')
+    else:
+        config_file = cfg_argparse['config']
+    cfg = default_config()
+    cfg.merge_from_file(config_file)
+    cfg.update(cfg_argparse)
+    cfg.freeze()
+    # print(cfg.dump())
+
+    os.makedirs(os.path.join(cfg_argparse['expdir'], cfg_argparse['expname']))
+    _savepath = os.path.join(cfg_argparse['expdir'], cfg_argparse['expname'], 'config.yaml')
+    save_config(cfg, _savepath)
+
+    return cfg
 
 def warmup_training_config() -> CN:
     """
@@ -97,7 +119,7 @@ def warmup_training_config() -> CN:
     """
     cfg_argparse = _parse_args(parser)
     if cfg_argparse['config'] == '':
-        config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'default/warmup.yaml')
+        config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'warmup.yaml')
     else:
         config_file = cfg_argparse['config']
     cfg = default_config()
@@ -121,7 +143,7 @@ def transmodel_config() -> CN:
     """
     cfg_argparse = _parse_args(parser)
     if cfg_argparse['config'] == '':
-        config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'default/transmodel.yaml')
+        config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'transmodel.yaml')
     else:
         config_file = cfg_argparse['config']
     cfg = default_config()

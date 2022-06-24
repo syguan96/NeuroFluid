@@ -33,6 +33,7 @@ class Evaluator(BaseTrainer):
     def build_dataloader(self):
         self.test_viewnames = self.options['test'].views
         self.test_dataset = BlenderDataset(self.options.test.path, self.options, 
+                                            start_index=self.options['test'].start_index, end_index=self.options['test'].end_index,
                                             imgW=self.options.TEST.imgW, imgH=self.options.TEST.imgH,
                                             imgscale=self.options.TEST.scale,viewnames=self.test_viewnames, split='test')
         self.test_dataset_length = len(self.test_dataset)
@@ -107,8 +108,9 @@ class Evaluator(BaseTrainer):
                     rays = data['rays_1'][view_idx].view(-1, 6)
 
                     render_ret = self.render_image(pred_pos, rays.shape[0], ro, rays, focal_length, cw, iseval=True)
-                    if data_idx >= 50:
-                        self.renderer.cfg.use_mask = True
+                    assert self.renderer.cfg.use_mask == True
+                    # if data_idx >= 50:
+                    #     self.renderer.cfg.use_mask = True
                     pred_rgbs_0 = render_ret['pred_rgbs_0']
                     prefix=f'coarse/{view_name}'
                     self.visualization(pred_rgbs_0, rgbs, prefix, data_idx+1)

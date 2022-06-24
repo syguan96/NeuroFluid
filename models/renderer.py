@@ -170,7 +170,7 @@ class RenderNet(nn.Module):
             variance_embedded = self.embedding_xyz(variance.reshape(-1,3))
             pos_like_feats.append(variance_embedded)
         # smoothed dir
-        if self.cfg.encoding.smoothed_dir and not sigma_only:
+        if self.cfg.encoding.smoothed_dir:
             smoothed_dir_embedded = self.embedding_dir(smoothed_dir)
             dir_like_feats.append(smoothed_dir_embedded)
         if not sigma_only:

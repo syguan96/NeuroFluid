@@ -5,7 +5,7 @@ Code reposity for this paper:
 ICML 2022   
 [[Paper]](https://arxiv.org/pdf/2203.01762.pdf) [[Project Page]](https://syguan96.github.io/NeuroFluid/)
 
-Please cite our paper (pdf) if you find this code useful:
+Please cite our paper if you find this code useful:
 ```
 @inproceedings{guan2022neurofluid,
   title={NeuroFluid: Fluid Dynamics Grounding with Particle-Driven Neural Radiance Fields},
@@ -50,7 +50,8 @@ NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run 
 
 
 ## Fetch data
-Dataset and pretrained model will be released soon.
+Download dataset from this [link](https://drive.google.com/file/d/18al7ypv9UWiGw4qm9-tNeUSb240SxBBZ/view?usp=sharing)
+I try to train models better. Pretrained models will be released soon.
 
 ## Generate data
 See [this guide](data_generation/README.md) to generate fluid data.
@@ -91,4 +92,4 @@ DeepLagrangianFluids](https://github.com/isl-org/DeepLagrangianFluids). Please c
 }
 ```
 
-We refer to [nerf_pl](https://github.com/kwea123/nerf_pl) to implement our renderer.
+We refer to [nerf_pl](https://github.com/kwea123/nerf_pl) to implement our renderer. Thank D-NeRF for providing the script of computing PSNR/SSIM/LPIPS.
