@@ -50,7 +50,7 @@ NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run 
 
 
 ## Fetch data
-Download dataset from this [link](https://drive.google.com/file/d/18al7ypv9UWiGw4qm9-tNeUSb240SxBBZ/view?usp=sharing)
+Download dataset from this [link](https://drive.google.com/file/d/18al7ypv9UWiGw4qm9-tNeUSb240SxBBZ/view?usp=sharing).
 I try to train models better. Pretrained models will be released soon.
 
 ## Generate data
