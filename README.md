@@ -1,5 +1,5 @@
 # NeuroFluid
-Code reposity for this paper:  
+Code repository for this paper:  
 **NeuroFluid: Fluid Dynamics Grounding with Particle-Driven Neural Radiance Fields.**  
 [Shanyan Guan](https://syguan96.github.io/), Huayu Deng, [Yunbo Wang](https://wyb15.github.io/)<sup>†</sup>, [Xiaokang Yang](https://scholar.google.com/citations?user=yDEavdMAAAAJ&hl=zh-CN)  
 ICML 2022   
@@ -49,10 +49,6 @@ NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run 
 
 
 
-## Fetch data
-Download dataset from this [link](https://drive.google.com/file/d/18al7ypv9UWiGw4qm9-tNeUSb240SxBBZ/view?usp=sharing).
-I try to train models better. Pretrained models will be released soon.
-
 ## Generate data
 See [this guide](data_generation/README.md) to generate fluid data.
 
@@ -75,10 +71,19 @@ python eval_renderer.py --resume_from $MODEL_PATH --dataset DATASET_NAME
 DATASET_NAME is one element of [bunny, watercube, watersphere, honeycone].
 
 
-
 ## Run the training script
-To be down.
+1. Warm-up stage
+```bash
+CUDA_VISIBLE_DEVICES=3 python train_renderer.py --expdir exps/watercube --expname scale-1.0/warmup --dataset watercube --config configs/watercube_warmup.yaml 
+```
 
+2. End2end stage
+```bash 
+CUDA_VISIBLE_DEVICES=0 python train_e2e.py --expdir exps/watercube --expname scale-1.0/e2e --dataset watercube --config configs/watercube_e2e.yaml 
+```
+
+## Fetch data
+Download dataset and models from this [link](https://drive.google.com/drive/folders/14lOFgqE2XMhFrJUj94IQoIVa2q1R0v2C?usp=sharing).
 
 ## Acknowledgement
 The implementation of transition model is borrowed from [
