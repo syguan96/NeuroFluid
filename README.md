@@ -21,7 +21,7 @@ Please cite our paper if you find this code useful:
 </p>
 
 ## Dependencies
-NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run NeuroFluid, please install dependencies as follows:
+NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7 and cuda == 11.1. To run NeuroFluid, please install dependencies as follows:
 1. Create an environment
     ```bash 
     conda create -n fluid-env python=3.7
@@ -29,9 +29,8 @@ NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run 
     ```
 2. Install Open3D.   
     ```bash
-    git clone https://github.com/isl-org/Open3D-ML.git
-    cd Open3D-ML
-    pip install open3d
+    git clone https://github.com/isl-org/Open3D-ML.git && cd Open3D-ML && git checkout c461790869257e851ae7f035585b878df73bc093
+    pip install open3d==0.15.2
     pip install -r requirements.txt
     pip install -r requirements-torch-cuda.txt
     ```
@@ -39,8 +38,8 @@ NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7. To run 
     ```bash
     conda install -c fvcore -c iopath -c conda-forge fvcore iopath
     conda install -c bottler nvidiacub
-    git clone https://github.com/facebookresearch/pytorch3d.git
-    cd pytorch3d && pip install -e .
+    wget -c https://github.com/facebookresearch/pytorch3d/archive/refs/tags/v0.6.1.tar.gz
+    tar -xf v0.6.1.tar.gz && cd pytorch3d-0.6.1 && pip install -e .
     ```
 4. install other dependencies
     ```bash
@@ -69,6 +68,7 @@ python eval_transmodel.py --resume_from $MODEL_PATH
 python eval_renderer.py --resume_from $MODEL_PATH --dataset DATASET_NAME
 ```
 DATASET_NAME is one element of [bunny, watercube, watersphere, honeycone].
+
 
 
 ## Run the training script
