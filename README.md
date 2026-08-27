@@ -51,6 +51,12 @@ NeuroFluid is implemented and tested on Ubuntu 18.04 with python == 3.7 and cuda
 ## Generate data
 See [this guide](data_generation/README.md) to generate fluid data.
 
+## License
+
+The dataset is released under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
+
+Please note that third-party content, if any, remains subject to its original copyright and licensing terms.
+
 ## Running the pretrained model
 - Evaluate NeuroFluid:
 ```bash 
